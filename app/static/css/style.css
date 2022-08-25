@@ -1,0 +1,66 @@
+/*-----------------------
+# START CONFIGURATION
+-----------------------*/
+html,
+body {
+  height: 100%;
+  margin: 0;
+  max-width: 100%;
+  overflow-y: hidden;
+  color: read;
+}
+
+/*-----------------------
+# FOOTER
+-----------------------*/
+.wrapper{
+    min-height: 100%;
+    margin-bottom: -40px;
+}
+#footer,
+.push{
+    height: 50px;
+}
+/*-----------------------
+# COURSES
+-----------------------*/
+#courses {
+  width: 120px;
+  border-radius: 4px;
+}
+
+/*-----------------------
+# CUSTOM SWEETALERT
+-----------------------*/
+/* all texts 100% centered */
+.swal-text {
+    text-align: center;
+}
+/* Icon */
+.swal-icon--success::before,
+.swal-icon--success::after,
+.swal-icon--success__hide-corners {
+    background: none;
+}
+.swal-icon--success {
+    /* border of ring */
+    border-color: #007bff;   
+}
+/* Button */
+.swal-button {
+    padding: 7px;
+    border-radius: 5px;
+    background-color: #007bff;
+    border: 1px solid #007bff;
+    font-size: 12px;
+}
+.swal-button:focus {
+    /* Remouve the silver border arround the button */
+    box-shadow: none;
+}
+.swal-button:not([disabled]):hover {
+    /* Hover effect */
+    background: transparent;
+    color: #111;
+    border: 1px solid #007bff;
+}

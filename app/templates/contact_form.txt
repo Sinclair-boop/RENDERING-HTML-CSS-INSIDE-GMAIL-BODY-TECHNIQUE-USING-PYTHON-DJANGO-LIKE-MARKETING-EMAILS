@@ -1,0 +1,33 @@
+<body style="background-color: #d3d3d3;">
+ <style>
+  @import url('https://fonts/googleapis.com/css/css?family=Roboto');
+ </style>
+ <br><br>
+ <center>
+  <div style="background-color: #fff; width: 70%; height: 680px; border-radius: 5px; margin-top:50px; font-family: Roboto;">
+   <br><br>
+   <p style="font-size: 22px;">Hello,<a style="color: #0d6efd;">{{ name }}</a></p>
+   <p style="font-size: 15px;">We recieved the email via this email address:<a style="color: #0d6efd; text-decoration: none;" href="">{{ email }}</a></p>
+   <p style="font-size: 15px;">Your signed up for the<a style="color: #0d6efd;" href="">{{ courses }}</a></p>
+
+   <hr style="color: #0d6efd; width: 80%;">
+   <p style="font-size: 25px">We are glad that you are interested in this course!</p>
+   <br>
+   <p style="font-size: 25px">Click the button to downloard the e-book!!!</p>
+   <br><br>
+   <div style="padding-top:32px;text-align:center">
+    <button type="button"
+    style="font-family:'Google Sans',Roboto,RobotoDraft,Helvetica,Arial,sans-serif;line-height:16px;color:#ffffff;font-weight:400;text-decoration:none;font-size:14px;display:inline-block;padding:10px 24px;background-color:#4184f3;border-radius:5px;min-width:90px">Download
+   </button>
+   </div>
+   <br><br>
+   <p style="font-size: 30px; color:#0d6efd">Thanks!</p>
+   <br><br>
+   <div style="margin-top: 40px;">
+    <p style="font-size: 13px;">Note: If yo no longer want to recieve our News about courses, unsubscribefrom the link below </p>
+    <a href="#">Unsubscribe</a>
+   </div>
+  </div>
+ </center>
+ <br><br><br><br><br><br><br><br><br>
+</body>

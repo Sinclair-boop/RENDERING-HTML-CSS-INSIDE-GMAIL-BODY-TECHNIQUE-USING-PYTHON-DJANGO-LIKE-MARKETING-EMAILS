@@ -1,0 +1,111 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <!-- bootstrap 5.0 css -->
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+ <!-- Fontawesome-->
+ <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
+ <!-- Favicon-->
+ <link rel="shortcut icon" href= {% static 'img/favicon.ico' %}>
+ <!-- logo-->
+ <link rel="shortcut icon" href= {% static 'img/logo.ico' %}>
+
+ <!-- static css-->
+ <link rel="stylesheet" href= {% static 'css/style.css' %}>
+
+ <title>courses</title>
+</head>
+<body>
+ <!-- <h1 class="text-center">Home page</h1> -->
+ <div class="wrapper">
+  <header>
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a href="" class="navbar-brand flex-grow-1" style="color:#fff;margin-left:25px;" >
+     <i class="fas fa-biohazard"></i>&nbsp;&nbsp;Mastery Courses
+    </a>
+   </nav>
+  </header>
+  <div class="container mt-5" style="width:80%;">
+   <a class="btn btn-outline-primary" style="width:100%;font-size:20px; curser: default; ">Chose just one course below</a>
+   <br><br>
+   <form action="send_mail/" method="POST" class="mt-4" autocomplete="off">
+    {% csrf_token %}
+    <div class="d-flex justify-content-between" rolel="group"  >
+     <input type="radio" class="btn-check" name="courses" id="btnradio1" autocomplete="off" value="React">
+     <label class="btn btn-outline-primary btn-lg mb-3 p-4" id="courses" for="btnradio1"><i class="fab fa-react fa-3x"></i></label>
+     <input type="radio" class="btn-check" name="courses" id="btnradio2" autocomplete="off" value="Angular">
+     <label class="btn btn-outline-primary btn-lg mb-3 p-4" id="courses" for="btnradio2"><i class="fab fa-angular fa-3x"></i></label>
+     <input type="radio" class="btn-check" name="courses" id="btnradio3" autocomplete="off" value="Node">
+     <label class="btn btn-outline-primary btn-lg mb-3 p-4" id="courses" for="btnradio3"><i class="fab fa-node fa-3x"></i></label>
+     <input type="radio" class="btn-check" name="courses" id="btnradio4" autocomplete="off" value="HTML">
+     <label class="btn btn-outline-primary btn-lg mb-3 p-4" id="courses" for="btnradio4"><i class="fab fa-html5 fa-3x"></i></label>
+     <input type="radio" class="btn-check" name="courses" id="btnradio5" autocomplete="off" value="CSS">
+     <label class="btn btn-outline-primary btn-lg mb-3 p-4" id="courses" for="btnradio5"><i class="fab fa-css3-alt fa-3x"></i></label>
+     <input type="radio" class="btn-check" name="courses" id="btnradio6" autocomplete="off" value="Python">
+     <label class="btn btn-outline-primary btn-lg mb-3 p-4" id="courses" for="btnradio6"><i class="fab fa-python fa-3x"></i></label>
+     <input type="radio" class="btn-check" name="courses" id="btnradio7" autocomplete="off" value="Vue">
+     <label class="btn btn-outline-primary btn-lg mb-3 p-4" id="courses" for="btnradio7"><i class="fab fa-vuejs fa-3x"></i></label>
+     <input type="radio" class="btn-check" name="courses" id="btnradio8" autocomplete="off" value="Docker">
+     <label class="btn btn-outline-primary btn-lg mb-3 p-4" id="courses" for="btnradio8"><i class="fab fa-docker fa-3x"></i></label>
+    </div>
+    <div class="card p-3 border-primary mt-5">
+     <h5 class="text-center text-primary mb-3">fill out this form</h5>
+     <div class="input-group mb-3">
+      <span class="input-group-text"><i class="fas fa-user-alt"></i></span>
+      <input type="text" name="name" class="from-control" required placeholder="Your name">
+     </div>
+     <div class="input-group mb-3">
+      <span class="input-group-text"><i class="fas fa-user-alt"></i></span>
+      <input type="email" name="email" class="from-control" required placeholder="Your email">
+     </div>
+     <div class="btn-group mt-3">
+      <button type="submit" class="btn btn-outline-primary mb-4" style="border-radius: 4px;">
+       <i class="fas fa-cloud-download-alt">&nbsp;&nbsp; GET COURSE !</i>
+      </button>
+     </div>
+    </div>
+   </form>
+  </div><!-- END // wrapper-->
+  <br><br>
+  <h2 class="text-center text-primary mt-5 blink_me">100% free</h2>
+ </div><!-- END // wrapper-->
+ <!-- Message from backend -->
+ {% for message in messages %}
+  {% if message.tags == 'success' %}
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script>
+   var m = "{{ message }}";
+   swal('Perfect', m, 'success' )
+  </script>
+  {% endif %}
+ {% endfor %}
+
+ <!-- Footer -->
+ <footer class="bg-dark text-centern text-lg-start" id="footer" style="color:#fff;">
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+   &copy; {% now "Y" %} Copyringht:
+   <a class="text-light" href="#" style="text-decoration: none;">
+    <span style="color: #03a9f4;">www.your-website.com</span>
+   </a>
+  </div>
+ </footer>
+
+ <!-- bootstrap 5 js -->
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+ <!-- Jquery -->
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+ <!-- Pulse effect -->
+ <script>
+  (function blink(){
+    $('.blink_me').fadeOut(500).fadeIn(700,blink);
+  })();
+ </script>
+</body>
+</html>
